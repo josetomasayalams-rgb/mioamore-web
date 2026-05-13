@@ -8,7 +8,7 @@
     "build:pages": "GITHUB_PAGES=true next build",
     "start": "next start",
     "lint": "eslint .",
-    "deploy": "npm run build:pages && touch out/.nojekyll && gh-pages -d out"
+    "deploy": "npm run build:pages && touch out/.nojekyll && gh-pages -d out --dotfiles"
   },
   "dependencies": {
     "framer-motion": "^12.0.0",
