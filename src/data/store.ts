@@ -3,192 +3,94 @@ export const store = {
   instagramUrl: "https://www.instagram.com/mioamore.cl/",
   whatsappNumber: "56912345678",
   email: "hola@mioamore.cl",
-  location: "Chile",
-  shippingNote: "Despachos y entregas coordinadas por WhatsApp según comuna y disponibilidad.",
+  location: "Santiago, Chile",
+  shippingNote: "Despachos a coordinar y retiros según disponibilidad.",
 };
-
-export const categories = [
-  "Todos",
-  "Bikinis y trajes de baño",
-  "Ropa y pijamas",
-  "Aromas y perfumería",
-  "Cuidado corporal y belleza",
-  "Accesorios",
-] as const;
-
-export type Category = Exclude<(typeof categories)[number], "Todos">;
-
-export type CategoryInfo = {
-  title: Category;
-  description: string;
-  image: string;
-};
-
-export const categoryInfo: CategoryInfo[] = [
-  {
-    title: "Bikinis y trajes de baño",
-    description: "Diseños para disfrutar el verano con comodidad, color y estilo.",
-    image:
-      "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80",
-  },
-  {
-    title: "Ropa y pijamas",
-    description: "Prendas suaves, cómodas y femeninas para todos los días.",
-    image:
-      "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=900&q=80",
-  },
-  {
-    title: "Aromas y perfumería",
-    description: "Fragancias y detalles aromáticos para regalar o regalonearte.",
-    image:
-      "https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&w=900&q=80",
-  },
-  {
-    title: "Cuidado corporal y belleza",
-    description:
-      "Autobronceantes, bronceadores, jabones, serum y productos para tu rutina personal.",
-    image:
-      "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?auto=format&fit=crop&w=900&q=80",
-  },
-  {
-    title: "Accesorios",
-    description: "Bolsos playeros, aros, pañuelos, cinturones y detalles que completan tu look.",
-    image:
-      "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=900&q=80",
-  },
-];
 
 export type Product = {
   id: string;
   name: string;
   price: string;
-  category: Category;
+  category: "Regalos" | "Accesorios" | "Detalles" | "Favoritos";
   description: string;
   image: string;
-  badge: "Nuevo" | "Favorito" | "Verano" | "Regalo ideal" | "Glow";
   featured?: boolean;
 };
 
 export const products: Product[] = [
   {
-    id: "bikini-amore-sunset",
-    name: "Bikini Amore Sunset",
-    price: "$29.990",
-    category: "Bikinis y trajes de baño",
-    description: "Bikini de tonos cálidos para días de playa, piscina y escapadas de verano.",
+    id: "set-amore",
+    name: "Set Amore",
+    price: "$24.990",
+    category: "Regalos",
+    description: "Detalle listo para regalar con una selección delicada y presentación boutique.",
     image:
-      "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=900&q=80",
-    badge: "Verano",
+      "https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&w=900&q=80",
     featured: true,
   },
   {
-    id: "pijama-soft-rose",
-    name: "Pijama Soft Rose",
-    price: "$34.990",
-    category: "Ropa y pijamas",
-    description: "Pijama suave y femenino para descansar cómoda sin perder estilo.",
-    image:
-      "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?auto=format&fit=crop&w=900&q=80",
-    badge: "Favorito",
-    featured: true,
-  },
-  {
-    id: "perfume-roll-on-dulce-amore",
-    name: "Perfume Roll On Dulce Amore",
-    price: "$9.990",
-    category: "Aromas y perfumería",
-    description: "Fragancia práctica para llevar en el bolso y reaplicar durante el día.",
-    image:
-      "https://images.unsplash.com/photo-1592945403244-b3fbafd7f539?auto=format&fit=crop&w=900&q=80",
-    badge: "Regalo ideal",
-    featured: true,
-  },
-  {
-    id: "autobronceante-glow",
-    name: "Autobronceante Glow",
+    id: "caja-rosa",
+    name: "Caja Rosa",
     price: "$18.990",
-    category: "Cuidado corporal y belleza",
-    description: "Glow gradual para un tono luminoso y cuidado antes o después del verano.",
+    category: "Detalles",
+    description: "Una opción cálida y femenina para cumpleaños, agradecimientos o fechas especiales.",
     image:
-      "https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&w=900&q=80",
-    badge: "Glow",
+      "https://images.unsplash.com/photo-1513885535751-8b9238bd345a?auto=format&fit=crop&w=900&q=80",
     featured: true,
   },
   {
-    id: "jabon-artesanal-vainilla",
-    name: "Jabón Artesanal Vainilla",
-    price: "$6.990",
-    category: "Cuidado corporal y belleza",
-    description: "Jabón aromático de vainilla para una rutina simple, cálida y delicada.",
-    image:
-      "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=900&q=80",
-    badge: "Nuevo",
-  },
-  {
-    id: "serum-pestanas",
-    name: "Serum de pestañas",
-    price: "$14.990",
-    category: "Cuidado corporal y belleza",
-    description: "Producto de belleza para sumar a tu rutina diaria de cuidado personal.",
-    image:
-      "https://images.unsplash.com/photo-1522338242992-e1a54906a8da?auto=format&fit=crop&w=900&q=80",
-    badge: "Favorito",
-  },
-  {
-    id: "bolso-playero-arena",
-    name: "Bolso Playero Arena",
-    price: "$22.990",
-    category: "Accesorios",
-    description: "Bolso amplio, liviano y combinable para acompañar días de playa o ciudad.",
-    image:
-      "https://images.unsplash.com/photo-1590874103328-eac38a683ce7?auto=format&fit=crop&w=900&q=80",
-    badge: "Verano",
-    featured: true,
-  },
-  {
-    id: "aros-golden-summer",
-    name: "Aros Golden Summer",
-    price: "$8.990",
-    category: "Accesorios",
-    description: "Aros dorados con brillo sutil para elevar looks simples y playeros.",
-    image:
-      "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=900&q=80",
-    badge: "Favorito",
-  },
-  {
-    id: "panuelo-rosa-nude",
-    name: "Pañuelo Rosa Nude",
-    price: "$7.990",
-    category: "Accesorios",
-    description: "Pañuelo liviano para usar en el pelo, cuello, cartera o como detalle de color.",
-    image:
-      "https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?auto=format&fit=crop&w=900&q=80",
-    badge: "Nuevo",
-  },
-  {
-    id: "cinturon-trenzado",
-    name: "Cinturón Trenzado",
+    id: "accesorio-luz",
+    name: "Accesorio Luz",
     price: "$12.990",
     category: "Accesorios",
-    description: "Cinturón de textura natural para cerrar vestidos, jeans o looks de verano.",
+    description: "Pieza versátil para sumar un acento elegante a cualquier look diario.",
     image:
-      "https://images.unsplash.com/photo-1624222247344-550fb60583dc?auto=format&fit=crop&w=900&q=80",
-    badge: "Regalo ideal",
+      "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=900&q=80",
+  },
+  {
+    id: "detalle-cielo",
+    name: "Detalle Cielo",
+    price: "$16.990",
+    category: "Favoritos",
+    description: "Selección suave y cuidada para sorprender sin complicarse.",
+    image:
+      "https://images.unsplash.com/photo-1527633412983-d80af308e660?auto=format&fit=crop&w=900&q=80",
+    featured: true,
+  },
+  {
+    id: "mini-box",
+    name: "Mini Box",
+    price: "$9.990",
+    category: "Regalos",
+    description: "Formato pequeño con terminaciones bonitas para un gesto rápido y especial.",
+    image:
+      "https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=900&q=80",
+  },
+  {
+    id: "detalle-dorado",
+    name: "Detalle Dorado",
+    price: "$21.990",
+    category: "Favoritos",
+    description: "Combinación elegante para regalos más especiales, con empaque listo para entregar.",
+    image:
+      "https://images.unsplash.com/photo-1573408301185-9146fe634ad0?auto=format&fit=crop&w=900&q=80",
   },
 ];
+
+export const categories = ["Todos", "Regalos", "Accesorios", "Detalles", "Favoritos"] as const;
 
 export const testimonials = [
   {
     name: "Camila R.",
-    text: "Compré por Instagram y la atención fue rápida, cercana y muy clara.",
+    text: "Me respondieron rápido y el regalo llegó precioso, tal como se veía en las fotos.",
   },
   {
     name: "Antonia M.",
-    text: "Los productos llegaron preciosos. Se nota la selección y el cuidado de la tienda.",
+    text: "Muy buena presentación. Se nota el cuidado en cada detalle.",
   },
   {
     name: "Valentina S.",
-    text: "Me encantó que pude consultar por WhatsApp y coordinar todo sin complicarme.",
+    text: "Compré desde Instagram y todo fue simple. Volvería a pedir.",
   },
 ];
 
@@ -196,12 +98,7 @@ export const faqs = [
   {
     question: "Cómo compro en Mio Amore?",
     answer:
-      "Elige tus productos favoritos, toca Comprar por WhatsApp y coordinamos disponibilidad, pago y despacho.",
-  },
-  {
-    question: "Tienen productos reales disponibles?",
-    answer:
-      "La disponibilidad puede cambiar por temporada. Escríbenos por WhatsApp o Instagram para confirmar stock.",
+      "Elige el producto, toca Comprar por WhatsApp y te responderemos para confirmar disponibilidad, despacho y pago.",
   },
   {
     question: "Hacen despachos?",
@@ -209,8 +106,13 @@ export const faqs = [
       "Sí. Los despachos se coordinan por WhatsApp según comuna, horario y disponibilidad.",
   },
   {
-    question: "Puedo pedir recomendación?",
+    question: "Puedo pedir algo personalizado?",
     answer:
-      "Sí. Cuéntanos qué buscas y te orientamos con productos, aromas, accesorios o regalos.",
+      "Sí. Escríbenos por WhatsApp o Instagram con tu idea y vemos opciones disponibles.",
+  },
+  {
+    question: "Qué medios de pago aceptan?",
+    answer:
+      "Aceptamos transferencia y otros medios que se confirman al momento de coordinar la compra.",
   },
 ];

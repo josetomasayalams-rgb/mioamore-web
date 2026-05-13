@@ -5,25 +5,14 @@ const siteUrl = "https://mioamoreboutique.cl";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Mio Amore | Bikinis, ropa, aromas y accesorios",
+  title: "Mio Amore | Boutique online",
   description:
-    "Boutique de moda, playa, aromas, accesorios y cuidado corporal. Compra bikinis, ropa, pijamas, perfumes, autobronceantes y más por WhatsApp.",
-  keywords: [
-    "Mio Amore",
-    "bikinis",
-    "trajes de baño",
-    "ropa",
-    "pijamas",
-    "perfumes",
-    "aromas",
-    "autobronceantes",
-    "accesorios",
-    "boutique Chile",
-  ],
+    "Mio Amore es una boutique online con productos delicados, regalos y detalles seleccionados para comprar fácil por WhatsApp o Instagram.",
+  keywords: ["Mio Amore", "boutique online", "tienda Instagram", "regalos", "WhatsApp"],
   openGraph: {
-    title: "Mio Amore | Bikinis, ropa, aromas y accesorios",
+    title: "Mio Amore | Boutique online",
     description:
-      "Boutique de moda, playa, aromas, accesorios y cuidado corporal con compra rápida por WhatsApp.",
+      "Catálogo boutique con productos seleccionados y compra rápida por WhatsApp.",
     url: siteUrl,
     siteName: "Mio Amore",
     locale: "es_CL",
