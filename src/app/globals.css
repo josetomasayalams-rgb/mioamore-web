@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  background: #fffcf8;
+  color: #5b3a32;
+  --font-inter: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-playfair: Georgia, "Times New Roman", serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    linear-gradient(135deg, rgba(255, 247, 239, 0.96) 0%, rgba(255, 252, 248, 0.98) 38%, rgba(246, 231, 217, 0.82) 100%),
+    repeating-linear-gradient(95deg, rgba(201, 133, 107, 0.05) 0 1px, transparent 1px 18px);
+}
+
+img {
+  max-width: 100%;
+}
+
+::selection {
+  background: #ebc6be;
+  color: #5b3a32;
+}
+
+.focus-ring {
+  @apply focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-terracotta;
+}
+
+.texture-linen {
+  background-image:
+    linear-gradient(115deg, rgba(255, 255, 255, 0.46), rgba(255, 255, 255, 0)),
+    repeating-linear-gradient(90deg, rgba(91, 58, 50, 0.035) 0 1px, transparent 1px 14px);
+}
+
+.shoreline {
+  background:
+    linear-gradient(135deg, rgba(255, 247, 239, 0.96), rgba(235, 198, 190, 0.58)),
+    radial-gradient(ellipse at 18% 8%, rgba(255, 255, 255, 0.86), transparent 34rem);
+}
+
+.floating-whatsapp {
+  animation: soft-float 4.5s ease-in-out infinite;
+}
+
+@keyframes soft-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-6px);
+  }
+}
