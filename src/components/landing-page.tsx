@@ -60,10 +60,11 @@ export function LandingPage() {
             href={whatsappUrl}
             target="_blank"
             rel="noreferrer"
-            className="focus-ring inline-flex min-h-10 items-center justify-center gap-2 rounded-md bg-rosewood px-4 py-2 text-sm font-semibold text-white transition hover:bg-ink"
+            aria-label="Comprar por WhatsApp"
+            className="focus-ring inline-flex h-10 w-10 shrink-0 items-center justify-center gap-2 rounded-md bg-rosewood p-0 text-sm font-semibold text-white transition hover:bg-ink sm:w-auto sm:px-4 sm:py-2"
           >
             <MessageCircle size={17} aria-hidden="true" />
-            WhatsApp
+            <span className="hidden sm:inline">WhatsApp</span>
           </a>
         </nav>
       </header>
